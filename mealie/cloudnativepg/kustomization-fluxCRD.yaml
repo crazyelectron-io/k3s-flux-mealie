@@ -14,5 +14,5 @@ spec:
   prune: true
   wait: true
   dependsOn:
-    - name: cpng-system-cnpg
+    - name: cnpg-system-cnpg
       namespace: flux-system
