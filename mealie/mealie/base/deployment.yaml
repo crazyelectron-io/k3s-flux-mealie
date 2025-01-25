@@ -7,7 +7,6 @@ metadata:
 spec:
   progressDeadlineSeconds: 300
   replicas: 1
-  serviceName: *app
   revisionHistoryLimit: 10
   strategy:
     rollingUpdate:
