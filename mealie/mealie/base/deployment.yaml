@@ -29,9 +29,9 @@ spec:
             - name: ALLOW_SIGNUP
               value: "false"
             - name: PUID
-              value: 1000
+              value: "1000"
             - name: PGID
-              value: 1000
+              value: "1000"
             - name: TZ
               value: Europe/Amsterdam
             - name: BASE_URL
@@ -45,7 +45,7 @@ spec:
             - name: POSTGRES_SERVER
               value: mealie-cluster-rw
             - name: POSTGRES_PORT
-              value: 5432
+              value: "5432"
             - name: POSTGRES_DB
               value: mealie_db
           ports:
