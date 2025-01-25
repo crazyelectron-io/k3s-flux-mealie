@@ -6,5 +6,5 @@ namespace: mealie
 resources:
   - namespace.yaml
   - cloudnativepg/kustomization-fluxCRD.yaml
-  # - mealie/kustomization-fluxCRD.yaml
+  - mealie/kustomization-fluxCRD.yaml
   
