@@ -5,7 +5,7 @@ kind: Kustomization
 metadata:
   name: mealie-cloudnativepg
 spec:
-  path: ./mealei/cloudnativepg/base
+  path: ./mealie/cloudnativepg/base
   sourceRef:
     kind: GitRepository
     name: mealie
