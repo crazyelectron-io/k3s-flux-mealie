@@ -26,18 +26,28 @@ spec:
           image: registry.${SECRET_DOMAIN_0}/library/mealie:2.5.0
           imagePullPolicy: IfNotPresent
           env:
-            ALLOW_SIGNUP: "false"
-            PUID: 1000
-            PGID: 1000
-            TZ: Europe/Amsterdam
-            BASE_URL: https://meal.${SECRET_DOMAIN_0}
-            # Database Settings
-            DB_ENGINE: postgres
-            POSTGRES_USER: ${SECRET_MEALIE_PG_USER}
-            POSTGRES_PASSWORD: ${SECRET_MEALIE_PG_PASSWORD}
-            POSTGRES_SERVER: mealie-cluster-rw
-            POSTGRES_PORT: 5432
-            POSTGRES_DB: mealie_db
+            - name: ALLOW_SIGNUP
+              value: "false"
+            - name: PUID
+              value: 1000
+            - name: PGID
+              value: 1000
+            - name: TZ
+              value: Europe/Amsterdam
+            - name: BASE_URL
+              value: https://meal.${SECRET_DOMAIN_0}
+            - name: DB_ENGINE
+              value: postgres
+            - name: POSTGRES_USER
+              value: ${SECRET_MEALIE_PG_USER}
+            - name: POSTGRES_PASSWORD
+              value: ${SECRET_MEALIE_PG_PASSWORD}
+            - name: POSTGRES_SERVER
+              value: mealie-cluster-rw
+            - name: POSTGRES_PORT
+              value: 5432
+            - name: POSTGRES_DB
+              value: mealie_db
           ports:
             - containerPort: 9000
               name: http
