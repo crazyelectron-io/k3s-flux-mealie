@@ -1,0 +1,16 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  labels:
+    prometheus-instance: main
+  name: mealie-cluster
+spec:
+  namespaceSelector:
+    matchNames:
+    - mealie
+  podMetricsEndpoints:
+  - port: metrics
+  selector:
+    matchLabels:
+      postgresql: mealie_cluster

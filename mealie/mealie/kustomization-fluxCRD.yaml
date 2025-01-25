@@ -1,0 +1,21 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/kustomization-kustomize-v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: mealie-mealie
+spec:
+  path: ./mealie/mealie/base
+  sourceRef:
+    kind: GitRepository
+    name: mealie
+    namespace: flux-system
+  interval: 5m
+  prune: true
+  wait: true
+  dependsOn:
+    - name: mealie-cloudnativepg
+    - name: longhorn-system-longhorn
+      namespace: flux-system
+    - name: traefik-traefik
+      namespace: flux-system

@@ -1,0 +1,27 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: mealie-cluster
+spec:
+  description: "PostgreSQL Mealie DB"
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.4
+  instances: 2
+  bootstrap:
+    initdb:
+      database: mealie_db
+      owner: ${SECRET_MEALIE_PG_USER}
+      secret:
+        name: mealie-cnpg-user-secret
+  storage:
+    storageClass: longhorn
+    size: 1Gi
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: 200m
+    limits:
+      memory: 1Gi
+      cpu: 1
+  monitoring:
+    enablePodMonitor: true
