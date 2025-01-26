@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: *app
-          image: registry.${SECRET_DOMAIN_0}/library/mealie:2.5.0
+          image: http://harbor-portsl.harbor-system.svc.cluster.local/library/mealie:2.5.0 #registry.${SECRET_DOMAIN_0}/library/mealie:2.5.0
           imagePullPolicy: IfNotPresent
           env:
             - name: ALLOW_SIGNUP
